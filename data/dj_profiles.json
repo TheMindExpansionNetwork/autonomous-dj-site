@@ -1,0 +1,54 @@
+{
+  "agents": [
+    {
+      "name": "Jack",
+      "style": "psychedelic lead guitar energy",
+      "role": "lead"
+    },
+    {
+      "name": "Drummer",
+      "style": "live jam groove backbone",
+      "role": "rhythm"
+    },
+    {
+      "name": "Aurora",
+      "style": "ethereal cinematic ambient",
+      "role": "texture"
+    },
+    {
+      "name": "Rust-E",
+      "style": "gritty boom bap bass pressure",
+      "role": "low-end"
+    },
+    {
+      "name": "Static Rex",
+      "style": "high-voltage rave chaos",
+      "role": "hype"
+    },
+    {
+      "name": "Pizza Dave",
+      "style": "party funk and playful hooks",
+      "role": "crowd-lift"
+    },
+    {
+      "name": "Lighter Larry",
+      "style": "warm melodic journey trance",
+      "role": "builder"
+    },
+    {
+      "name": "Reality Shift",
+      "style": "mind-bending psytrance transitions",
+      "role": "transition"
+    },
+    {
+      "name": "Chillbot",
+      "style": "lofi cool-down and resets",
+      "role": "cooldown"
+    },
+    {
+      "name": "MINDBOT",
+      "style": "futuristic rave orchestration",
+      "role": "director"
+    }
+  ]
+}
