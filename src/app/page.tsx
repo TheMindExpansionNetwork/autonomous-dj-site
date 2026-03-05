@@ -39,6 +39,15 @@ const architecture = [
   "Set Manifest: complete timeline for replay/remix",
 ];
 
+const liveChecklist = [
+  "Run health profile before venue setup",
+  "Run demo profile and verify report ok=true",
+  "Prepare 15–30 minute fallback playlist",
+  "Line-check audio output and limiter",
+  "Record set manifests for each show",
+  "Capture photos/video clips for social proof",
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -61,6 +70,12 @@ export default function Home() {
             className="rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-black"
           >
             Listen Live
+          </a>
+          <a
+            href="/guide"
+            className="rounded-xl border border-cyan-500/50 px-5 py-3 font-semibold text-cyan-300"
+          >
+            Operator Guide
           </a>
           <a
             href="#contact"
@@ -98,6 +113,23 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-12">
+        <h2 className="text-3xl font-bold">Live Set Readiness Checklist</h2>
+        <ul className="mt-6 grid gap-4 md:grid-cols-2">
+          {liveChecklist.map((item) => (
+            <li
+              key={item}
+              className="rounded-2xl border border-zinc-800 bg-zinc-950 p-4 text-zinc-200"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-5 text-zinc-400">
+          Full setup guide: <a className="text-cyan-300" href="/guide">/guide</a>
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-12">
         <h2 className="text-3xl font-bold">Agent Roster</h2>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           {agents.map((a) => (
@@ -117,8 +149,8 @@ export default function Home() {
             Bring Autonomous DJ to your next event
           </h3>
           <p className="mt-3 text-zinc-200">
-            Festival activations, livestream programming, and AI-powered branded
-            experiences.
+            Festival activations, livestream programming, pop-up sound system sets,
+            and AI-powered branded experiences.
           </p>
           <p className="mt-4 text-cyan-300">Contact: booking@m1ndb0t.com</p>
         </div>
