@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function GuidePage() {
   const steps = [
     {
@@ -18,49 +20,67 @@ export default function GuidePage() {
     {
       title: "4) Run your live set",
       cmd: "python dj.py run --set sets/rave_experience.json --output ./output",
-      note: "Use your selected set blueprint and capture logs + manifest.",
+      note: "Use your selected set blueprint and capture logs plus manifest.",
     },
   ];
 
-  return (
-    <main className="min-h-screen bg-black text-white">
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <a href="/" className="text-cyan-300">← Back</a>
-        <h1 className="mt-4 text-4xl font-bold md:text-6xl">Operator Guide</h1>
-        <p className="mt-4 max-w-3xl text-zinc-300">
-          This is the practical runbook for preparing and operating live Autonomous DJ sets.
-          Use this flow for upcoming pop-ups, venue demos, and festival pilots.
-        </p>
-      </section>
+  const promotionNotes = [
+    "Record short crowd-reaction clips from every show",
+    "Post one recap reel per event within 24 hours",
+    "Keep one-page technical rider ready for venues",
+    "Collect emails and contacts from promoters on-site",
+    "Track each set URL plus report status for social proof",
+    "Use consistent branding: Autonomous DJ Engine",
+  ];
 
-      <section className="mx-auto max-w-5xl px-6 pb-16">
-        <h2 className="text-2xl font-semibold">Core Workflow</h2>
-        <div className="mt-6 space-y-4">
-          {steps.map((s) => (
-            <article key={s.title} className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
-              <h3 className="text-xl font-semibold">{s.title}</h3>
-              <pre className="mt-3 overflow-x-auto rounded-lg bg-zinc-900 p-3 text-sm text-cyan-300">
-{s.cmd}
+  return (
+    <main className="mx-auto w-full max-w-5xl px-6 pt-14 pb-20 md:px-8 md:pt-20">
+      <header className="surface-card rounded-2xl px-6 py-6 md:px-8 md:py-8">
+        <Link
+          href="/"
+          className="text-xs font-semibold tracking-[0.14em] text-brand-strong uppercase"
+        >
+          Back to Landing Page
+        </Link>
+        <h1 className="mt-3 text-4xl font-semibold text-card-ink md:text-5xl">
+          Operator Guide
+        </h1>
+        <p className="mt-4 max-w-3xl text-muted">
+          Use this runbook before every Autonomous DJ event to verify reliability,
+          reduce on-site risk, and keep your live set workflow predictable.
+        </p>
+      </header>
+
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-card-ink md:text-3xl">
+          Core Workflow
+        </h2>
+        <div className="mt-5 space-y-4">
+          {steps.map((step) => (
+            <article key={step.title} className="elevated-card rounded-2xl p-5 md:p-6">
+              <h3 className="text-lg font-semibold text-card-ink md:text-xl">
+                {step.title}
+              </h3>
+              <pre className="mt-3 overflow-x-auto rounded-xl border border-line bg-canvas px-4 py-3 font-mono text-sm text-brand-strong">
+{step.cmd}
               </pre>
-              <p className="mt-3 text-zinc-300">{s.note}</p>
+              <p className="mt-3 text-sm text-muted md:text-base">{step.note}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-2xl font-semibold">Live Promotion Notes</h2>
-        <ul className="mt-4 grid gap-3 md:grid-cols-2">
-          {[
-            "Record short crowd-reaction clips from every show",
-            "Post one recap reel per event within 24 hours",
-            "Keep one-page technical rider ready for venues",
-            "Collect emails/contacts from promoters on-site",
-            "Track each set URL + report status for social proof",
-            "Use consistent branding: Autonomous DJ Engine",
-          ].map((item) => (
-            <li key={item} className="rounded-xl border border-zinc-800 bg-zinc-950 p-4 text-zinc-300">
-              {item}
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-card-ink md:text-3xl">
+          Live Promotion Notes
+        </h2>
+        <ul className="mt-5 grid gap-3 md:grid-cols-2">
+          {promotionNotes.map((note) => (
+            <li
+              key={note}
+              className="surface-card rounded-xl px-4 py-3 text-sm text-muted md:text-base"
+            >
+              {note}
             </li>
           ))}
         </ul>

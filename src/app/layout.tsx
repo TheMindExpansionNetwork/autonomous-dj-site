@@ -1,56 +1,48 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const siteUrl = "https://autonomous-dj-site.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Autonomous DJ Engine",
-    template: "%s | Autonomous DJ Engine",
+    default: "Autonomous DJ | Premium AI Performance System",
+    template: "%s | Autonomous DJ",
   },
   description:
-    "Autonomous AI DJ system for festivals, livestreams, and interactive brand activations. Crowd-reactive sets, smooth handoffs, and no-silence reliability.",
+    "Autonomous DJ is a production-ready AI performance system for festivals, livestreams, and branded activations with adaptive set flow and dead-air protection.",
   keywords: [
     "Autonomous DJ",
-    "AI music",
-    "AI DJ",
+    "AI DJ platform",
+    "Live AI music",
     "Festival tech",
     "Livestream music",
-    "Generative audio",
-    "ACE Step",
-    "MindBot",
+    "Branded activations",
+    "Generative DJ system",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Autonomous DJ Engine",
+    title: "Autonomous DJ | Premium AI Performance System",
     description:
-      "AI DJs that improvise in real time, react to crowd energy, and never stop the music.",
+      "Launch crowd-reactive AI DJ performances with clear operator controls, reliable fallbacks, and replayable session manifests.",
     url: siteUrl,
-    siteName: "Autonomous DJ Engine",
+    siteName: "Autonomous DJ",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Autonomous DJ Engine",
+    title: "Autonomous DJ | Premium AI Performance System",
     description:
-      "Crowd-reactive AI DJ sets for festivals, livestreams, and branded experiences.",
+      "Production-ready AI DJ sets for festivals, livestreams, and branded experiences.",
   },
   robots: {
     index: true,
     follow: true,
   },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -60,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>
