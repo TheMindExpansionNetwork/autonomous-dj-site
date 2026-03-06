@@ -5,32 +5,32 @@ export default function GuidePage() {
     {
       title: "1) Run health profile",
       cmd: "python scripts/run_local_profile.py --profile health",
-      note: "Confirms core framework wiring and set registry are healthy.",
+      note: "Confirms the core framework wiring, set registry, and local environment are healthy before a show.",
     },
     {
       title: "2) Run demo profile",
       cmd: "python scripts/run_local_profile.py --profile demo",
-      note: "Generates integration report JSON with pass/fail status.",
+      note: "Generates an integration report so you can catch problems before the audience ever hears them.",
     },
     {
       title: "3) Validate report",
       cmd: "output/reports/demo_set_integration_report.json",
-      note: "Check ok=true before going live.",
+      note: "Check for ok=true and review warnings before promoting the setup to go-live status.",
     },
     {
       title: "4) Run your live set",
       cmd: "python dj.py run --set sets/rave_experience.json --output ./output",
-      note: "Use your selected set blueprint and capture logs plus manifest.",
+      note: "Launch the selected blueprint, capture logs, and keep manifests for replay, QA, and promo material.",
     },
   ];
 
   const promotionNotes = [
     "Record short crowd-reaction clips from every show",
-    "Post one recap reel per event within 24 hours",
-    "Keep one-page technical rider ready for venues",
-    "Collect emails and contacts from promoters on-site",
-    "Track each set URL plus report status for social proof",
-    "Use consistent branding: Autonomous DJ Engine",
+    "Post one recap reel within 24 hours while the hype is alive",
+    "Keep a one-page technical rider ready for venues",
+    "Collect promoter contact info while the room is still warm",
+    "Track set URLs and system reports for social proof",
+    "Keep branding consistent across landing page, stream, and deck",
   ];
 
   return (
@@ -42,12 +42,12 @@ export default function GuidePage() {
         >
           Back to Landing Page
         </Link>
-        <h1 className="mt-3 text-4xl font-semibold text-card-ink md:text-5xl">
+        <h1 className="text-glow mt-3 text-4xl font-semibold text-card-ink md:text-5xl">
           Operator Guide
         </h1>
-        <p className="mt-4 max-w-3xl text-muted">
+        <p className="mt-4 max-w-3xl text-muted-strong">
           Use this runbook before every Autonomous DJ event to verify reliability,
-          reduce on-site risk, and keep your live set workflow predictable.
+          reduce on-site risk, and keep your live workflow crisp under pressure.
         </p>
       </header>
 
@@ -61,10 +61,10 @@ export default function GuidePage() {
               <h3 className="text-lg font-semibold text-card-ink md:text-xl">
                 {step.title}
               </h3>
-              <pre className="mt-3 overflow-x-auto rounded-xl border border-line bg-canvas px-4 py-3 font-mono text-sm text-brand-strong">
+              <pre className="code-panel mt-3 overflow-x-auto rounded-xl px-4 py-3 font-mono text-sm text-brand-strong">
 {step.cmd}
               </pre>
-              <p className="mt-3 text-sm text-muted md:text-base">{step.note}</p>
+              <p className="mt-3 text-sm text-muted-strong md:text-base">{step.note}</p>
             </article>
           ))}
         </div>
@@ -78,7 +78,7 @@ export default function GuidePage() {
           {promotionNotes.map((note) => (
             <li
               key={note}
-              className="surface-card rounded-xl px-4 py-3 text-sm text-muted md:text-base"
+              className="surface-card rounded-xl px-4 py-3 text-sm text-muted-strong md:text-base"
             >
               {note}
             </li>
