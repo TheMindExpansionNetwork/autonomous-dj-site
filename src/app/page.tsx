@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 const outcomeStats = [
@@ -105,6 +108,16 @@ const faq = [
 ];
 
 export default function Home() {
+  const [secretClicks, setSecretClicks] = useState(0);
+
+  const handleSecretClick = () => {
+    const newCount = secretClicks + 1;
+    setSecretClicks(newCount);
+    if (newCount >= 11) {
+      window.location.href = "/matrix";
+    }
+  };
+
   return (
     <main className="relative overflow-x-clip">
       <div className="hero-mesh" />
@@ -213,6 +226,13 @@ export default function Home() {
                 Manifest logs the full timeline for replay and QA.
               </li>
             </ul>
+            <button
+              onClick={handleSecretClick}
+              className="mt-4 w-full rounded-lg border border-line px-3 py-2 text-xs text-muted opacity-40 transition hover:border-brand-strong/40 hover:text-brand-strong hover:opacity-100"
+              title="System diagnostics"
+            >
+              {secretClicks > 0 ? `Diagnostic: ${secretClicks}/11` : "System Check"}
+            </button>
           </aside>
         </div>
       </section>
@@ -379,7 +399,7 @@ export default function Home() {
             Bring Autonomous DJ to your next audience-facing event.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-strong">
-            Share your format, audience size, and target vibe. We’ll map a pilot,
+            Share your format, audience size, and target vibe. We'll map a pilot,
             a rehearsal plan, and a show-day operating checklist that actually works.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
